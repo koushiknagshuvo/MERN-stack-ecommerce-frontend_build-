@@ -8,11 +8,18 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import Path from "path";
 import path from "path";
+import { fileURLToPath } from "url";
 // Config env
 
 dotenv.config();
 //Database config
 connectDB();
+
+
+//esmodule fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.__dirname(__filename);
+
 // rest object
 const app = express();
 // middlewaress
